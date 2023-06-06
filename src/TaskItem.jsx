@@ -1,10 +1,12 @@
-function TaskItem() {
+function TaskItem(props) {
   return (
-    <>
-      <p>This is a task</p>
+    <li>
+      <p>{props.title}</p>
+
       <input type="checkbox" />
+
       <button className="btn-close">x</button>
-    </>
+    </li>
   );
 }
 

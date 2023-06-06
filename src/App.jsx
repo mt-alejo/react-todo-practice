@@ -5,15 +5,21 @@ import TasksContainer from "./TaskContainer";
 import ButtonAddTask from "./ButtonAddTask";
 import TaskItem from "./TaskItem";
 
+const defaultTasks = [
+  { title: "Pasear perro", done: true },
+  { title: "Pasear gato", done: false },
+  { title: "Pasear pescado", done: true },
+];
+
 function App() {
   return (
     <>
-      <TaskCounter />
+      <TaskCounter completed={4} total={10} />
       <TaskSearch />
       <TasksContainer>
-        <TaskItem />
-        <TaskItem />
-        <TaskItem />
+        {defaultTasks.map((task) => (
+          <TaskItem key={task.title} title={task.title} done={task.done} />
+        ))}
       </TasksContainer>
       <ButtonAddTask />
     </>

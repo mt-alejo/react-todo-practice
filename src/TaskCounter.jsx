@@ -1,7 +1,10 @@
-function TaskCounter() {
+// eslint-disable-next-line react/prop-types
+function TaskCounter({ completed, total }) {
   return (
     <>
-      <h1 className="title">You have completed 3 of 5 tasks</h1>
+      <h1 className="title">
+        You have completed {completed} of {total} tasks
+      </h1>
     </>
   );
 }
