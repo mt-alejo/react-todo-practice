@@ -1,4 +1,4 @@
-function TaskAdder() {
+function TaskSearch() {
   return (
     <>
       <input type="text" placeholder="Write task here.." />
@@ -6,4 +6,4 @@ function TaskAdder() {
   );
 }
 
-export default TaskAdder;
+export default TaskSearch;
