@@ -36,6 +36,8 @@ html {
   font-size: 40px;
   padding: 0;
   position: fixed;
+  left: 80%;
+  top: 85%;
 }
 
 .btn-close {
