@@ -1,0 +1,9 @@
+.TaskSearch {
+  padding: 5px;
+  width: 300px;
+  max-width: 90%;
+  align-self: center;
+  text-align: center;
+  height: 40px;
+  border-radius: 3px;
+}

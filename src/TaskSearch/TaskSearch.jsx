@@ -1,8 +1,9 @@
+import "./TaskSearch.css";
 function TaskSearch() {
   return (
     <>
       <input
-        className="input-search"
+        className="TaskSearch"
         type="text"
         placeholder="Write task here.."
       />
