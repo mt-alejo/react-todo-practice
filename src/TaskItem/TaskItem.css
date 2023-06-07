@@ -12,6 +12,9 @@
 .TaskItem-Task {
   flex: 1;
   padding: 12px 9px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .Btn-Close {

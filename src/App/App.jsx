@@ -8,7 +8,11 @@ import TaskItem from "../TaskItem/TaskItem";
 const defaultTasks = [
   { title: "Pasear perro", done: true },
   { title: "Pasear gato", done: false },
-  { title: "Pasear pescado", done: true },
+  {
+    title:
+      "Pasear pescado y loremloremloremloremloremloremloremloremloremloremloremlorem",
+    done: true,
+  },
 ];
 
 function App() {
