@@ -1,9 +1,9 @@
 import "./App.css";
-import TaskCounter from "./TaskCounter";
-import TaskSearch from "./TaskSearch";
-import TasksContainer from "./TaskContainer";
-import ButtonAddTask from "./ButtonAddTask";
-import TaskItem from "./TaskItem";
+import TaskCounter from "../TaskCounter";
+import TaskSearch from "../TaskSearch";
+import TasksContainer from "../TaskContainer";
+import ButtonAddTask from "./ButtonAddTask/ButtonAddTask";
+import TaskItem from "../TaskItem";
 
 const defaultTasks = [
   { title: "Pasear perro", done: true },
