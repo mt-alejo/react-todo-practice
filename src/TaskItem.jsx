@@ -1,9 +1,9 @@
 function TaskItem(props) {
   return (
-    <li>
-      <p>{props.title}</p>
-
+    <li className="task-item">
       <input type="checkbox" />
+
+      <p className="task-item-title">{props.title}</p>
 
       <button className="btn-close">x</button>
     </li>

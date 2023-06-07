@@ -1,5 +1,5 @@
 function ButtonAddTask() {
-  return <button>Add task</button>;
+  return <button className="btn btn-add">+</button>;
 }
 
 export default ButtonAddTask;

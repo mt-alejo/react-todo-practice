@@ -3,3 +3,49 @@
   margin: 0;
   padding: 0;
 }
+
+html {
+  background: rgb(39, 39, 39);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  width: 100px;
+  padding: 4px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  background: rgb(216, 216, 216);
+  color: rgb(49, 49, 49);
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  border: 1px solid rgb(125, 133, 136);
+
+  background: rgb(230, 230, 230);
+}
+
+.btn-add {
+  border-radius: 50%;
+  width: 50px;
+  font-size: 40px;
+  padding: 0;
+  position: fixed;
+}
+
+.btn-close {
+  background: rgb(255, 94, 94);
+  color: rgb(255, 237, 237);
+  width: 12px;
+  transition: 0.3s;
+  border: none;
+}
+
+.btn-close:hover {
+  background: rgb(255, 27, 27);
+}

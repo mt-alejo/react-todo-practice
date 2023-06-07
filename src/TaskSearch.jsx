@@ -1,7 +1,11 @@
 function TaskSearch() {
   return (
     <>
-      <input type="text" placeholder="Write task here.." />
+      <input
+        className="input-search"
+        type="text"
+        placeholder="Write task here.."
+      />
     </>
   );
 }
