@@ -1,9 +1,9 @@
 .ButtonAddTask {
-  border-radius: 50%;
-  width: 50px;
+  width: 60px;
   font-size: 40px;
   padding: 0;
   position: fixed;
   left: 75%;
   top: 80%;
+  border-radius: 50%;
 }

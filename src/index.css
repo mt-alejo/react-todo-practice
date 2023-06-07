@@ -14,9 +14,7 @@ html {
 }
 
 .Btn {
-  width: 100px;
   padding: 4px;
-  border-radius: 3px;
   border: 1px solid transparent;
   background: rgb(216, 216, 216);
   color: rgb(49, 49, 49);
