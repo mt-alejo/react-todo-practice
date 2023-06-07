@@ -1,11 +1,13 @@
+/* eslint-disable react/prop-types */
+import "./TaskItem.css";
 function TaskItem(props) {
   return (
-    <li className="task-item">
+    <li className="TaskItem">
       <input type="checkbox" />
 
-      <p className="task-item-title">{props.title}</p>
+      <p className="TaskItem-Task">{props.title}</p>
 
-      <button className="btn-close">x</button>
+      <button className="Btn-Close">x</button>
     </li>
   );
 }
