@@ -4,6 +4,7 @@ import TaskSearch from "../TaskSearch/TaskSearch";
 import TasksContainer from "../TasksContainer/TaskContainer";
 import ButtonAddTask from "../ButtonAddTask/ButtonAddTask";
 import TaskItem from "../TaskItem/TaskItem";
+import TaskForm from "../TaskForm/TaskForm";
 
 const defaultTasks = [
   { title: "Pasear perro", done: true },
@@ -21,6 +22,7 @@ const defaultTasks = [
 function App() {
   return (
     <>
+      <TaskForm />
       <TaskCounter completed={"$"} total={defaultTasks.length} />
       <TaskSearch />
       <TasksContainer>
