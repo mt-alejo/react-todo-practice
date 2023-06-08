@@ -1,7 +1,8 @@
 .TaskItem {
   display: flex;
+  align-items: center;
   border: 1px solid rgb(145, 145, 145);
-  padding-left: 5px;
+  padding: 1em;
   background: rgb(43, 43, 43);
 }
 
@@ -12,19 +13,23 @@
 .TaskItem-Task {
   flex: 1;
   padding: 12px 9px;
+  margin-left: 10px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .Btn-Close {
-  background: rgb(255, 94, 94);
-  color: rgb(255, 237, 237);
-  width: 12px;
-  transition: 0.3s;
+  outline: 1px solid rgb(128, 128, 128);
+  background: rgb(43, 43, 43);
+  color: rgb(128, 128, 128);
+  width: 15px;
+  height: 15px;
+  transition: 0.2s;
   border: none;
 }
 
 .Btn-Close:hover {
   background: rgb(255, 27, 27);
+  color: white;
 }

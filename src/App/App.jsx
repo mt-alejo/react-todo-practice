@@ -9,8 +9,11 @@ const defaultTasks = [
   { title: "Pasear perro", done: true },
   { title: "Pasear gato", done: false },
   {
-    title:
-      "Pasear pescado y loremloremloremloremloremloremloremloremloremloremloremlorem",
+    title: "Pasear pescado",
+    done: true,
+  },
+  {
+    title: "Pasear borrego",
     done: true,
   },
 ];
@@ -18,7 +21,7 @@ const defaultTasks = [
 function App() {
   return (
     <>
-      <TaskCounter completed={4} total={10} />
+      <TaskCounter completed={"$"} total={defaultTasks.length} />
       <TaskSearch />
       <TasksContainer>
         {defaultTasks.map((task) => (
