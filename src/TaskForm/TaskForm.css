@@ -30,3 +30,8 @@
   color: rgb(44, 44, 44);
   background: greenyellow;
 }
+
+.TaskForm .ButtonClose {
+  position: absolute;
+  left: 90%;
+}

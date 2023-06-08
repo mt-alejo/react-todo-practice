@@ -22,17 +22,3 @@
 .TaskItem-Task--complete {
   text-decoration: line-through;
 }
-
-.Btn-Close {
-  background: rgb(43, 43, 43);
-  color: rgb(128, 128, 128);
-  width: 15px;
-  height: 15px;
-  transition: 0.2s;
-  border: none;
-}
-
-.Btn-Close:hover {
-  background: rgb(255, 27, 27);
-  color: white;
-}

@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import "./TaskItem.css";
+import ButtonClose from "../ButtonClose/ButtonClose";
 function TaskItem(props) {
   return (
     <li className="TaskItem">
@@ -13,7 +14,7 @@ function TaskItem(props) {
         {props.title}
       </p>
 
-      <button className="Btn-Close">x</button>
+      <ButtonClose />
     </li>
   );
 }
