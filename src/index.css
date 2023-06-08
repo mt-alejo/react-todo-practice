@@ -11,6 +11,9 @@ html {
 #root {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  margin: 0 24px;
 }
 
 .Btn {
@@ -24,6 +27,5 @@ html {
 
 .Btn:hover {
   border: 1px solid rgb(125, 133, 136);
-
   background: rgb(230, 230, 230);
 }
