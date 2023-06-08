@@ -13,6 +13,7 @@
   padding: 20px;
   outline: 1px solid white;
   border-radius: 3px;
+  display: none;
 }
 
 .TaskForm label {
@@ -35,4 +36,8 @@
 .TaskForm .ButtonClose {
   position: absolute;
   left: 90%;
+}
+
+.TaskForm--active {
+  display: flex;
 }

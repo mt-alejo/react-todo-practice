@@ -29,7 +29,7 @@ function App() {
         {defaultTasks.map((task) => (
           <TaskItem key={task.title} title={task.title} done={task.done} />
         ))}
-        <ButtonAddTask />
+        <ButtonAddTask onClick={() => console.log("works")} />
       </TasksContainer>
     </>
   );

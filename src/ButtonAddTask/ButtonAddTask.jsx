@@ -1,6 +1,16 @@
 import "./ButtonAddTask.css";
 function ButtonAddTask() {
-  return <button className="Btn ButtonAddTask">+</button>;
+  return (
+    <button
+      type="button"
+      onClick={() => {
+        document.querySelector(".TaskForm").classList.add("TaskForm--active");
+      }}
+      className="Btn ButtonAddTask"
+    >
+      +
+    </button>
+  );
 }
 
 export default ButtonAddTask;

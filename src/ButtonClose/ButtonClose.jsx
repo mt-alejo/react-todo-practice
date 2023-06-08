@@ -1,7 +1,11 @@
 import "./ButtonClose.css";
 
 function ButtonClose() {
-  return <button className="ButtonClose">x</button>;
+  return (
+    <button type="button" className="ButtonClose">
+      x
+    </button>
+  );
 }
 
 export default ButtonClose;
