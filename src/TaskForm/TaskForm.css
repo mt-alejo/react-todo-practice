@@ -24,7 +24,8 @@
 }
 
 .TaskForm .TaskForm-submit {
-  width: 30%;
+  width: 100%;
+  max-width: 100px;
   height: 30px;
   margin: 20px auto;
   color: rgb(44, 44, 44);
