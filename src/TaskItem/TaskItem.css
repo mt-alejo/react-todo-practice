@@ -19,8 +19,11 @@
   text-overflow: ellipsis;
 }
 
+.TaskItem-Task--complete {
+  text-decoration: line-through;
+}
+
 .Btn-Close {
-  outline: 1px solid rgb(128, 128, 128);
   background: rgb(43, 43, 43);
   color: rgb(128, 128, 128);
   width: 15px;

@@ -5,8 +5,8 @@ function TaskCounter({ completed, total }) {
     <>
       <h1 className="TaskCounter">
         You have completed{" "}
-        <span className="TaskCounter-Span">{completed} </span>of{" "}
-        <span className="TaskCounter-Span">{total} </span> tasks
+        <span className="TaskCounter-span">{completed} </span>
+        of <span className="TaskCounter-span">{total} </span> tasks
       </h1>
     </>
   );

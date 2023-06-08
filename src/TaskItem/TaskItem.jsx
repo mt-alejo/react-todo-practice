@@ -3,9 +3,9 @@ import "./TaskItem.css";
 function TaskItem(props) {
   return (
     <li className="TaskItem">
-      <input type="checkbox" />
+      <span className="TaskItem-Icon">{props.done === true ? "✅" : "⬜"}</span>
 
-      <p className="TaskItem-Task">{props.title}</p>
+      <p className="TaskItem-Task TaskItem-Task--complete">{props.title}</p>
 
       <button className="Btn-Close">x</button>
     </li>

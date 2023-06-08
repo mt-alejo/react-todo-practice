@@ -7,4 +7,9 @@
   height: 40px;
   border-radius: 3px;
   font-family: "Ubuntu", sans-serif;
+  border: none;
+}
+
+.TaskSearch:focus {
+  outline: 2px solid rgb(0, 0, 0);
 }
