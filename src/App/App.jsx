@@ -31,22 +31,23 @@ const defaultTasks = [
   },
 ];
 
-const completedTasks = defaultTasks.filter((task) => task.done === true).length;
-
 function App() {
   const [searchValue, setSearchValue] = useState("");
   console.log("Search: " + searchValue);
 
+  const [tasksList, setTasksList] = useState(defaultTasks);
+  const completedTasks = tasksList.filter((task) => task.done === true).length;
+
   return (
     <>
-      <TaskForm />
-      <TaskCounter completed={completedTasks} total={defaultTasks.length} />
+      <TaskForm setTasksList={setTasksList} tasksList={tasksList} />
+      <TaskCounter completed={completedTasks} total={tasksList.length} />
       <TaskSearch searchValue={searchValue} setSearchValue={setSearchValue} />
       <TasksContainer>
         {defaultTasks.map((task) => (
           <TaskItem key={task.title} title={task.title} done={task.done} />
         ))}
-        <ButtonAddTask onClick={() => console.log("works")} />
+        <ButtonAddTask />
       </TasksContainer>
     </>
   );

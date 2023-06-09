@@ -1,5 +1,6 @@
 import "./TaskSearch.css";
 
+// eslint-disable-next-line react/prop-types
 function TaskSearch({ searchValue, setSearchValue }) {
   return (
     <>
