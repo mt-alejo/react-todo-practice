@@ -9,25 +9,12 @@ import TaskForm from "../TaskForm/TaskForm";
 
 const defaultTasks = [
   {
-    title: "Do maths",
-    done: false,
-  },
-  {
-    title: "Code",
-    done: true,
-  },
-
-  {
     title: "Learn English",
     done: true,
   },
   {
     title: "Work out on GYM",
     done: false,
-  },
-  {
-    title: "Post in Twitter",
-    done: true,
   },
 ];
 

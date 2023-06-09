@@ -11,9 +11,12 @@ function TaskForm({ setTasksList, tasksList }) {
           title: document.querySelector(".TaskForm-input").value,
           done: false,
         };
-        setTasksList((tasksList = []));
+        setTasksList([...tasksList, userInput]);
         console.log(tasksList);
         console.log("Received " + userInput);
+        const form = document.querySelector(".TaskForm");
+        form.classList.remove("TaskForm--active");
+        form.reset();
       }}
     >
       <label htmlFor="task-title">Task:</label>
