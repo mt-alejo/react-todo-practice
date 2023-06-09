@@ -1,4 +1,5 @@
 import "./App.css";
+import { useState } from "react";
 import TaskCounter from "../TaskCounter/TaskCounter";
 import TaskSearch from "../TaskSearch/TaskSearch";
 import TasksContainer from "../TasksContainer/TaskContainer";
@@ -7,13 +8,12 @@ import TaskItem from "../TaskItem/TaskItem";
 import TaskForm from "../TaskForm/TaskForm";
 
 const defaultTasks = [
-  { title: "Go for a walk", done: true },
   {
     title: "Do maths",
     done: false,
   },
   {
-    title: "Learning and coding with React",
+    title: "Code",
     done: true,
   },
 
@@ -29,24 +29,19 @@ const defaultTasks = [
     title: "Post in Twitter",
     done: true,
   },
-  {
-    title: "More coding",
-    done: false,
-  },
-  {
-    title: "Watch anime",
-    done: true,
-  },
 ];
 
 const completedTasks = defaultTasks.filter((task) => task.done === true).length;
 
 function App() {
+  const [searchValue, setSearchValue] = useState("");
+  console.log("Search: " + searchValue);
+
   return (
     <>
       <TaskForm />
       <TaskCounter completed={completedTasks} total={defaultTasks.length} />
-      <TaskSearch />
+      <TaskSearch searchValue={searchValue} setSearchValue={setSearchValue} />
       <TasksContainer>
         {defaultTasks.map((task) => (
           <TaskItem key={task.title} title={task.title} done={task.done} />

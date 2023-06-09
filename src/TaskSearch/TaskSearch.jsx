@@ -1,10 +1,6 @@
 import "./TaskSearch.css";
-import { useState } from "react";
 
-function TaskSearch() {
-  const [searchValue, setSearchValue] = useState("");
-  console.log("Search: " + searchValue);
-
+function TaskSearch({ searchValue, setSearchValue }) {
   return (
     <>
       <input
