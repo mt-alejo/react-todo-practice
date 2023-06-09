@@ -55,10 +55,16 @@ function App() {
     console.log(actualizedTaskList);
   };
 
+  const isAllCompleted = tasksList.every((task) => !!task.done);
+
   return (
     <>
       <TaskForm setTasksList={setTasksList} tasksList={tasksList} />
-      <TaskCounter completed={completedTasks} total={tasksList.length} />
+      <TaskCounter
+        isAllCompleted={isAllCompleted}
+        completed={completedTasks}
+        total={tasksList.length}
+      />
       <TaskSearch searchValue={searchValue} setSearchValue={setSearchValue} />
       <TasksContainer>
         {searchedTasks.map((task) => (
