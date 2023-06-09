@@ -10,7 +10,7 @@ import TaskForm from "../TaskForm/TaskForm";
 const defaultTasks = [
   {
     title: "Learn English",
-    done: true,
+    done: false,
   },
   {
     title: "Work out on GYM",
@@ -32,6 +32,16 @@ function App() {
     return taskTitle.includes(searchedValue);
   });
 
+  const toggleDone = (text) => {
+    const copyCurrentTaskList = [...tasksList];
+    const indexTask = copyCurrentTaskList.findIndex(
+      (task) => task.title === text
+    );
+    copyCurrentTaskList[indexTask].done = true;
+    setTasksList(copyCurrentTaskList);
+    console.log(copyCurrentTaskList);
+  };
+
   return (
     <>
       <TaskForm setTasksList={setTasksList} tasksList={tasksList} />
@@ -39,7 +49,14 @@ function App() {
       <TaskSearch searchValue={searchValue} setSearchValue={setSearchValue} />
       <TasksContainer>
         {searchedTasks.map((task) => (
-          <TaskItem key={task.title} title={task.title} done={task.done} />
+          <TaskItem
+            key={task.title}
+            title={task.title}
+            done={task.done}
+            onComplete={() => {
+              toggleDone(task.title);
+            }}
+          />
         ))}
         <ButtonAddTask />
       </TasksContainer>

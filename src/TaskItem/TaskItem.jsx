@@ -4,7 +4,9 @@ import ButtonClose from "../ButtonClose/ButtonClose";
 function TaskItem(props) {
   return (
     <li className="TaskItem">
-      <span className="TaskItem-Icon">{props.done === true ? "✅" : "⬜"}</span>
+      <span className="TaskItem-Icon" onClick={props.onComplete}>
+        {props.done === true ? "✅" : "⬜"}{" "}
+      </span>
 
       <p
         className={`TaskItem-Task ${
