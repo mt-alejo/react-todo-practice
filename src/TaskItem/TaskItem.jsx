@@ -1,13 +1,12 @@
 /* eslint-disable react/prop-types */
 import "./TaskItem.css";
-import ButtonClose from "../ButtonClose/ButtonClose";
+import "../ButtonClose/ButtonClose.css";
 function TaskItem(props) {
   return (
     <li className="TaskItem">
       <span className="TaskItem-Icon" onClick={props.onComplete}>
         {props.done === true ? "✅" : "⬜"}{" "}
       </span>
-
       <p
         className={`TaskItem-Task ${
           props.done ? " TaskItem-Task--complete" : ""
@@ -15,8 +14,9 @@ function TaskItem(props) {
       >
         {props.title}
       </p>
-
-      <ButtonClose />
+      <button type="button" className="ButtonClose" onClick={props.onRemove}>
+        x
+      </button>{" "}
     </li>
   );
 }

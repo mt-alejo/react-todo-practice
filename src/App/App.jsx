@@ -44,6 +44,17 @@ function App() {
     console.log(copyCurrentTaskList);
   };
 
+  const removeTask = (text) => {
+    const copyCurrentTaskList = [...tasksList];
+
+    const actualizedTaskList = copyCurrentTaskList.filter(
+      (task) => task.title !== text
+    );
+    setTasksList(actualizedTaskList);
+
+    console.log(actualizedTaskList);
+  };
+
   return (
     <>
       <TaskForm setTasksList={setTasksList} tasksList={tasksList} />
@@ -57,6 +68,9 @@ function App() {
             done={task.done}
             onComplete={() => {
               toggleDone(task.title);
+            }}
+            onRemove={() => {
+              removeTask(task.title);
             }}
           />
         ))}
