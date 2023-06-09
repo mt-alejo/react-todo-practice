@@ -7,23 +7,45 @@ import TaskItem from "../TaskItem/TaskItem";
 import TaskForm from "../TaskForm/TaskForm";
 
 const defaultTasks = [
-  { title: "Pasear perro", done: true },
-  { title: "Pasear gato", done: false },
+  { title: "Go for a walk", done: true },
   {
-    title: "Pasear pescado",
+    title: "Do maths",
+    done: false,
+  },
+  {
+    title: "Learning and coding with React",
+    done: true,
+  },
+
+  {
+    title: "Learn English",
     done: true,
   },
   {
-    title: "Pasear borrego",
+    title: "Work out on GYM",
+    done: false,
+  },
+  {
+    title: "Post in Twitter",
+    done: true,
+  },
+  {
+    title: "More coding",
+    done: false,
+  },
+  {
+    title: "Watch anime",
     done: true,
   },
 ];
+
+const completedTasks = defaultTasks.filter((task) => task.done === true).length;
 
 function App() {
   return (
     <>
       <TaskForm />
-      <TaskCounter completed={"$"} total={defaultTasks.length} />
+      <TaskCounter completed={completedTasks} total={defaultTasks.length} />
       <TaskSearch />
       <TasksContainer>
         {defaultTasks.map((task) => (

@@ -8,4 +8,6 @@
 
 .TaskCounter-span {
   color: greenyellow;
+  padding: 0 5px;
+  font-size: 30px;
 }
