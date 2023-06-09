@@ -22,3 +22,7 @@
 .TaskItem-Task--complete {
   text-decoration: line-through;
 }
+
+.TaskItem-Icon {
+  cursor: pointer;
+}

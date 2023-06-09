@@ -37,7 +37,9 @@ function App() {
     const indexTask = copyCurrentTaskList.findIndex(
       (task) => task.title === text
     );
-    copyCurrentTaskList[indexTask].done = true;
+    copyCurrentTaskList[indexTask].done
+      ? (copyCurrentTaskList[indexTask].done = false)
+      : (copyCurrentTaskList[indexTask].done = true);
     setTasksList(copyCurrentTaskList);
     console.log(copyCurrentTaskList);
   };
