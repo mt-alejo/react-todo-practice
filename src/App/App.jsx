@@ -38,13 +38,20 @@ function App() {
   const [tasksList, setTasksList] = useState(defaultTasks);
   const completedTasks = tasksList.filter((task) => task.done === true).length;
 
+  const searchedTasks = tasksList.filter((task) => {
+    let taskTitle = task.title.toLowerCase();
+    let searchedValue = searchValue.toLowerCase();
+
+    return taskTitle.includes(searchedValue);
+  });
+
   return (
     <>
       <TaskForm setTasksList={setTasksList} tasksList={tasksList} />
       <TaskCounter completed={completedTasks} total={tasksList.length} />
       <TaskSearch searchValue={searchValue} setSearchValue={setSearchValue} />
       <TasksContainer>
-        {defaultTasks.map((task) => (
+        {searchedTasks.map((task) => (
           <TaskItem key={task.title} title={task.title} done={task.done} />
         ))}
         <ButtonAddTask />
