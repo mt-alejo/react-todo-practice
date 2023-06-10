@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import "./TaskItem.css";
 import "../ButtonClose/ButtonClose.css";
+import { FaCheck } from "react-icons/fa";
+
 function TaskItem(props) {
   return (
     <li className="TaskItem">
@@ -12,7 +14,10 @@ function TaskItem(props) {
           props.done ? " TaskItem-Task--complete" : ""
         }`}
       >
-        {props.title}
+        {props.title}{" "}
+        <span className="Icon-Check">
+          <FaCheck />
+        </span>
       </p>
       <button type="button" className="ButtonClose" onClick={props.onRemove}>
         x

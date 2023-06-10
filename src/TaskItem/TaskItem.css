@@ -23,6 +23,7 @@
   text-decoration: line-through;
 }
 
-.TaskItem-Icon {
+.Icon-Check {
   cursor: pointer;
+  color: blue;
 }
