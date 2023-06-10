@@ -4,7 +4,7 @@
   background: rgb(49, 49, 49);
   color: white;
   width: 95%;
-  height: 35vh;
+  height: 25vh;
   max-width: 400px;
   position: absolute;
   top: 50%;
@@ -21,7 +21,11 @@
 }
 
 .TaskForm-input {
-  height: 120px;
+  padding: 1em;
+}
+
+.TaskForm input:focus {
+  outline: none;
 }
 
 .TaskForm .TaskForm-submit {
