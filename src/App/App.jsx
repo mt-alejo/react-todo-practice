@@ -6,33 +6,7 @@ import TasksContainer from "../TasksContainer/TaskContainer";
 import ButtonAddTask from "../ButtonAddTask/ButtonAddTask";
 import TaskItem from "../TaskItem/TaskItem";
 import TaskForm from "../TaskForm/TaskForm";
-
-// const defaultTasks = [
-//   {
-//     title: "Learn English",
-//     done: false,
-//   },
-//   {
-//     title: "Work out on GYM",
-//     done: false,
-//   },
-// ];
-
-// localStorage.setItem("TASKER_V1", JSON.stringify(defaultTasks))
-
-function useLocalStorage(itemName, initialValue) {
-  const [itemsList, setItemsList] = useState(
-    () => JSON.parse(localStorage.getItem(itemName)) || initialValue
-  );
-
-  const saveLocalStorage = (actualizedList) => {
-    setItemsList(actualizedList);
-    let tasksListString = JSON.stringify(actualizedList);
-    localStorage.setItem(itemName, tasksListString);
-  };
-
-  return [itemsList, saveLocalStorage];
-}
+import { useLocalStorage } from "../Hooks/useLocalStorage";
 
 function App() {
   const [tasksList, setTasksList] = useLocalStorage("TASKER_V1", []);
