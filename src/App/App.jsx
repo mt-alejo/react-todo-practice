@@ -20,7 +20,6 @@ const defaultTasks = [
 
 function App() {
   const [searchValue, setSearchValue] = useState("");
-  console.log("Search: " + searchValue);
 
   const [tasksList, setTasksList] = useState(defaultTasks);
   const completedTasks = tasksList.filter((task) => task.done === true).length;
@@ -41,7 +40,6 @@ function App() {
       ? (copyCurrentTaskList[indexTask].done = false)
       : (copyCurrentTaskList[indexTask].done = true);
     setTasksList(copyCurrentTaskList);
-    console.log(copyCurrentTaskList);
   };
 
   const removeTask = (text) => {
@@ -56,7 +54,6 @@ function App() {
   const isAllCompleted = tasksList.every((task) => !!task.done);
   const isAllEmpty = tasksList.length === 0 ? true : false;
 
-  console.log(isAllEmpty);
   return (
     <>
       <TaskForm setTasksList={setTasksList} tasksList={tasksList} />

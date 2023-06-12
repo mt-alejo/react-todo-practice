@@ -23,7 +23,6 @@ function TaskCounter({ completed, total, isAllCompleted, isAllEmpty }) {
     );
   }
 
-  // const mesagge = isAllEmpty ? <p>EMPTY</p> : <p>NOT EMPTY</p>;
   return <>{mesagge}</>;
 }
 
