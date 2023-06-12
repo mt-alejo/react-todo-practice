@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import "./TaskItem.css";
-import "../ButtonClose/ButtonClose.css";
 import CheckIcon from "../TaskIcons/CheckIcon";
 import DeleteIcon from "../TaskIcons/DeleteIcon";
 
