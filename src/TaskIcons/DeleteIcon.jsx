@@ -1,7 +1,7 @@
 import TaskIcons from "./TaskIcons";
 
-function DeleteIcon() {
-  return <TaskIcons type="delete" color="gray" />;
+function DeleteIcon({ onRemove }) {
+  return <TaskIcons onClick={onRemove} type="delete" color="gray" />;
 }
 
 export default DeleteIcon;

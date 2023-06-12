@@ -7,9 +7,8 @@ import DeleteIcon from "../TaskIcons/DeleteIcon";
 function TaskItem(props) {
   return (
     <li className="TaskItem">
-      <span className="TaskItem-Icon" onClick={props.onComplete}>
-        <CheckIcon done={props.done} />
-      </span>
+      <CheckIcon onComplete={props.onComplete} done={props.done} />
+
       <p
         className={`TaskItem-Task ${
           props.done ? " TaskItem-Task--complete" : ""
@@ -17,9 +16,7 @@ function TaskItem(props) {
       >
         {props.title}{" "}
       </p>
-      <p onClick={props.onRemove}>
-        <DeleteIcon />
-      </p>
+      <DeleteIcon onRemove={props.onRemove} />
     </li>
   );
 }
