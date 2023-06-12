@@ -64,6 +64,7 @@ function App() {
 
   const isAllCompleted = tasksList.every((task) => !!task.done);
   const isAllEmpty = tasksList.length === 0 ? true : false;
+  console.log(tasksList);
 
   return (
     <>
@@ -75,7 +76,7 @@ function App() {
         total={tasksList.length}
       />
       <TaskSearch searchValue={searchValue} setSearchValue={setSearchValue} />
-      <TasksContainer>
+      <TasksContainer isAllEmpty={isAllEmpty}>
         {searchedTasks.map((task) => (
           <TaskItem
             key={task.title}
@@ -89,8 +90,8 @@ function App() {
             }}
           />
         ))}
-        <ButtonAddTask />
       </TasksContainer>
+      <ButtonAddTask />
     </>
   );
 }
