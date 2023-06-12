@@ -12,7 +12,7 @@
 }
 
 .Icon-check:hover .Icon-svg {
-  fill: greenyellow;
+  fill: rgb(255, 255, 255);
 }
 .Icon-delete:hover .Icon-svg {
   fill: rgb(255, 32, 50);
