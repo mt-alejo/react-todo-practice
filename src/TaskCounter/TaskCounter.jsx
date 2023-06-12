@@ -1,6 +1,6 @@
 import "./TaskCounter.css";
 // eslint-disable-next-line react/prop-types
-function TaskCounter({ completed, total, isAllCompleted }) {
+function TaskCounter({ completed, total, isAllCompleted, isAllEmpty }) {
   let mesagge = (
     <h1 className="TaskCounter">
       You have completed <span className="TaskCounter-span">{completed} </span>
@@ -15,6 +15,15 @@ function TaskCounter({ completed, total, isAllCompleted }) {
     );
   }
 
+  if (isAllEmpty) {
+    mesagge = (
+      <h1 className="TaskCounter">
+        <span className="TaskCounter">EMPTY</span>
+      </h1>
+    );
+  }
+
+  // const mesagge = isAllEmpty ? <p>EMPTY</p> : <p>NOT EMPTY</p>;
   return <>{mesagge}</>;
 }
 

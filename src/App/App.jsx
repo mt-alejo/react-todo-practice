@@ -51,16 +51,17 @@ function App() {
       (task) => task.title !== text
     );
     setTasksList(actualizedTaskList);
-
-    console.log(actualizedTaskList);
   };
 
   const isAllCompleted = tasksList.every((task) => !!task.done);
+  const isAllEmpty = tasksList.length === 0 ? true : false;
 
+  console.log(isAllEmpty);
   return (
     <>
       <TaskForm setTasksList={setTasksList} tasksList={tasksList} />
       <TaskCounter
+        isAllEmpty={isAllEmpty}
         isAllCompleted={isAllCompleted}
         completed={completedTasks}
         total={tasksList.length}
