@@ -64,7 +64,6 @@ function App() {
 
   const isAllCompleted = tasksList.every((task) => !!task.done);
   const isAllEmpty = tasksList.length === 0 ? true : false;
-  console.log(tasksList);
 
   return (
     <>

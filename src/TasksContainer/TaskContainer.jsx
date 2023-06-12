@@ -2,7 +2,9 @@ import "./TasksContainer.css";
 function TasksContainer(props) {
   let message = "";
   if (props.isAllEmpty) {
-    message = <h1>Works</h1>;
+    message = (
+      <h1 className="TaskContainer-Empty-Title">Press + to add a new task..</h1>
+    );
   } else {
     message = props.children;
   }
