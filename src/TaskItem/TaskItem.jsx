@@ -7,7 +7,13 @@ function TaskItem(props) {
   return (
     <li className="TaskItem">
       <span className="TaskItem-Icon" onClick={props.onComplete}>
-        {props.done === true ? "✅" : "⬜"}{" "}
+        <span
+          className={`Icon Icon-Check ${
+            props.done ? `Icon-Check--active` : ""
+          } `}
+        >
+          <FaCheck />
+        </span>
       </span>
       <p
         className={`TaskItem-Task ${
@@ -15,9 +21,6 @@ function TaskItem(props) {
         }`}
       >
         {props.title}{" "}
-        <span className="Icon-Check">
-          <FaCheck />
-        </span>
       </p>
       <button type="button" className="ButtonClose" onClick={props.onRemove}>
         x
