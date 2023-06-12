@@ -20,20 +20,26 @@ import TaskForm from "../TaskForm/TaskForm";
 
 // localStorage.setItem("TASKER_V1", JSON.stringify(defaultTasks))
 
-function App() {
-  const [searchValue, setSearchValue] = useState("");
-
-  const [tasksList, setTasksList] = useState(
-    () => JSON.parse(localStorage.getItem("TASKER_V1")) || []
+function useLocalStorage(itemName, initialValue) {
+  const [itemsList, setItemsList] = useState(
+    () => JSON.parse(localStorage.getItem(itemName)) || initialValue
   );
 
   const saveLocalStorage = (actualizedList) => {
-    setTasksList(actualizedList);
+    setItemsList(actualizedList);
     let tasksListString = JSON.stringify(actualizedList);
-    localStorage.setItem("TASKER_V1", tasksListString);
+    localStorage.setItem(itemName, tasksListString);
   };
 
+  return [itemsList, saveLocalStorage];
+}
+
+function App() {
+  const [tasksList, setTasksList] = useLocalStorage("TASKER_V1", []);
+
   const completedTasks = tasksList.filter((task) => task.done === true).length;
+
+  const [searchValue, setSearchValue] = useState("");
 
   const searchedTasks = tasksList.filter((task) => {
     let taskTitle = task.title.toLowerCase();
@@ -50,7 +56,7 @@ function App() {
     copyCurrentTaskList[indexTask].done
       ? (copyCurrentTaskList[indexTask].done = false)
       : (copyCurrentTaskList[indexTask].done = true);
-    saveLocalStorage(copyCurrentTaskList);
+    setTasksList(copyCurrentTaskList);
   };
 
   const removeTask = (text) => {
@@ -59,7 +65,7 @@ function App() {
     const actualizedTaskList = copyCurrentTaskList.filter(
       (task) => task.title !== text
     );
-    saveLocalStorage(actualizedTaskList);
+    setTasksList(actualizedTaskList);
   };
 
   const isAllCompleted = tasksList.every((task) => !!task.done);
@@ -67,7 +73,7 @@ function App() {
 
   return (
     <>
-      <TaskForm tasksList={tasksList} saveLocalStorage={saveLocalStorage} />
+      <TaskForm tasksList={tasksList} setTasksList={setTasksList} />
       <TaskCounter
         isAllEmpty={isAllEmpty}
         isAllCompleted={isAllCompleted}
