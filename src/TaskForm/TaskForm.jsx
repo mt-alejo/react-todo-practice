@@ -1,6 +1,6 @@
 import "./TaskForm.css";
 
-function TaskForm({ setTasksList, tasksList }) {
+function TaskForm({ saveLocalStorage, tasksList }) {
   return (
     <form
       action=""
@@ -11,9 +11,7 @@ function TaskForm({ setTasksList, tasksList }) {
           title: document.querySelector(".TaskForm-input").value,
           done: false,
         };
-        setTasksList([...tasksList, userInput]);
-        console.log(tasksList);
-        console.log("Received " + userInput);
+        saveLocalStorage([...tasksList, userInput]);
         const form = document.querySelector(".TaskForm");
         form.classList.remove("TaskForm--active");
         form.reset();

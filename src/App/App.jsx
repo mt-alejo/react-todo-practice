@@ -67,7 +67,7 @@ function App() {
 
   return (
     <>
-      <TaskForm setTasksList={setTasksList} tasksList={tasksList} />
+      <TaskForm tasksList={tasksList} saveLocalStorage={saveLocalStorage} />
       <TaskCounter
         isAllEmpty={isAllEmpty}
         isAllCompleted={isAllCompleted}
