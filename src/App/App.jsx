@@ -7,21 +7,32 @@ import ButtonAddTask from "../ButtonAddTask/ButtonAddTask";
 import TaskItem from "../TaskItem/TaskItem";
 import TaskForm from "../TaskForm/TaskForm";
 
-const defaultTasks = [
-  {
-    title: "Learn English",
-    done: false,
-  },
-  {
-    title: "Work out on GYM",
-    done: false,
-  },
-];
+// const defaultTasks = [
+//   {
+//     title: "Learn English",
+//     done: false,
+//   },
+//   {
+//     title: "Work out on GYM",
+//     done: false,
+//   },
+// ];
+
+// localStorage.setItem("TASKER_V1", JSON.stringify(defaultTasks))
 
 function App() {
   const [searchValue, setSearchValue] = useState("");
 
-  const [tasksList, setTasksList] = useState(defaultTasks);
+  const [tasksList, setTasksList] = useState(
+    () => JSON.parse(localStorage.getItem("TASKER_V1")) || []
+  );
+
+  const saveLocalStorage = (actualizedList) => {
+    setTasksList(actualizedList);
+    let tasksListString = JSON.stringify(actualizedList);
+    localStorage.setItem("TASKER_V1", tasksListString);
+  };
+
   const completedTasks = tasksList.filter((task) => task.done === true).length;
 
   const searchedTasks = tasksList.filter((task) => {
@@ -39,7 +50,7 @@ function App() {
     copyCurrentTaskList[indexTask].done
       ? (copyCurrentTaskList[indexTask].done = false)
       : (copyCurrentTaskList[indexTask].done = true);
-    setTasksList(copyCurrentTaskList);
+    saveLocalStorage(copyCurrentTaskList);
   };
 
   const removeTask = (text) => {
@@ -48,7 +59,7 @@ function App() {
     const actualizedTaskList = copyCurrentTaskList.filter(
       (task) => task.title !== text
     );
-    setTasksList(actualizedTaskList);
+    saveLocalStorage(actualizedTaskList);
   };
 
   const isAllCompleted = tasksList.every((task) => !!task.done);
