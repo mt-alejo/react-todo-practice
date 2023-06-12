@@ -22,12 +22,3 @@
 .TaskItem-Task--complete {
   text-decoration: line-through;
 }
-
-.Icon-Check {
-  cursor: pointer;
-  color: rgb(102, 101, 101);
-}
-
-.Icon-Check--active {
-  color: greenyellow;
-}
