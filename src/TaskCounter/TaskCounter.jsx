@@ -18,7 +18,7 @@ function TaskCounter({ completed, total, isAllCompleted, isAllEmpty }) {
   if (isAllEmpty) {
     mesagge = (
       <h1 className="TaskCounter">
-        <span className="TaskCounter">EMPTY</span>
+        <span className="TaskCounter">NOTHING HERE!</span>
       </h1>
     );
   }
