@@ -4,6 +4,7 @@ import { FaTimes } from "react-icons/fa";
 const iconTypes = {
   check: (color) => <FaCheck className="Icon-svg" fill={color} />,
   delete: (color) => <FaTimes className="Icon-svg" fill={color} />,
+  close: (color) => <FaTimes className="Icon-svg" fill={color} />,
 };
 function TaskIcons({ type, color, onClick }) {
   return (

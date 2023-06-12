@@ -45,3 +45,8 @@
 .TaskForm--active {
   display: flex;
 }
+
+.Icon-close {
+  position: absolute;
+  left: 90%;
+}
