@@ -8,6 +8,7 @@ import TaskForm from "../TaskForm/TaskForm";
 
 function AppUI({
   loading,
+  error,
   tasksList,
   setTasksList,
   isAllEmpty,
@@ -30,10 +31,11 @@ function AppUI({
       />
       <TaskSearch searchValue={searchValue} setSearchValue={setSearchValue} />
       <TasksContainer isAllEmpty={isAllEmpty}>
+        {error ? <p>Hubo un error</p> : null}
         {loading ? (
           <h1 className="TaskContainer-Empty-Title">Loading..</h1>
         ) : null}
-        {!searchedTasks.length ? (
+        {!loading && !searchedTasks.length ? (
           <h1 className="TaskContainer-Empty-Title">
             Press + to add a new task..
           </h1>

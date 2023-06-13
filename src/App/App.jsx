@@ -8,6 +8,7 @@ function App() {
     itemsList: tasksList,
     saveLocalStorage: setTasksList,
     loading,
+    error,
   } = useLocalStorage("TASKER_V1", []);
 
   const completedTasks = tasksList.filter((task) => task.done === true).length;
@@ -47,6 +48,7 @@ function App() {
   return (
     <AppUI
       loading={loading}
+      error={error}
       tasksList={tasksList}
       setTasksList={setTasksList}
       isAllEmpty={isAllEmpty}
