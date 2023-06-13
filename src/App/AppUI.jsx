@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import TaskCounter from "../TaskCounter/TaskCounter";
 import TaskSearch from "../TaskSearch/TaskSearch";
 import TasksContainer from "../TasksContainer/TaskContainer";
@@ -6,6 +7,7 @@ import TaskItem from "../TaskItem/TaskItem";
 import TaskForm from "../TaskForm/TaskForm";
 
 function AppUI({
+  loading,
   tasksList,
   setTasksList,
   isAllEmpty,
@@ -28,6 +30,14 @@ function AppUI({
       />
       <TaskSearch searchValue={searchValue} setSearchValue={setSearchValue} />
       <TasksContainer isAllEmpty={isAllEmpty}>
+        {loading ? (
+          <h1 className="TaskContainer-Empty-Title">Loading..</h1>
+        ) : null}
+        {!searchedTasks.length ? (
+          <h1 className="TaskContainer-Empty-Title">
+            Press + to add a new task..
+          </h1>
+        ) : null}
         {searchedTasks.map((task) => (
           <TaskItem
             key={task.title}

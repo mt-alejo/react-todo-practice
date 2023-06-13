@@ -4,7 +4,11 @@ import { useLocalStorage } from "../Hooks/useLocalStorage";
 import AppUI from "./AppUI";
 
 function App() {
-  const [tasksList, setTasksList] = useLocalStorage("TASKER_V1", []);
+  const {
+    itemsList: tasksList,
+    saveLocalStorage: setTasksList,
+    loading,
+  } = useLocalStorage("TASKER_V1", []);
 
   const completedTasks = tasksList.filter((task) => task.done === true).length;
 
@@ -16,6 +20,9 @@ function App() {
 
     return taskTitle.includes(searchedValue);
   });
+
+  const isAllCompleted = tasksList.every((task) => !!task.done);
+  const isAllEmpty = tasksList.length === 0 ? true : false;
 
   const toggleDone = (text) => {
     const copyCurrentTaskList = [...tasksList];
@@ -37,11 +44,9 @@ function App() {
     setTasksList(actualizedTaskList);
   };
 
-  const isAllCompleted = tasksList.every((task) => !!task.done);
-  const isAllEmpty = tasksList.length === 0 ? true : false;
-
   return (
     <AppUI
+      loading={loading}
       tasksList={tasksList}
       setTasksList={setTasksList}
       isAllEmpty={isAllEmpty}

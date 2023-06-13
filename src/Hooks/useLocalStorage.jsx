@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 function useLocalStorage(itemName, initialValue) {
-  const [itemsList, setItemsList] = useState(
-    () => JSON.parse(localStorage.getItem(itemName)) || initialValue
-  );
+  const [itemsList, setItemsList] = useState(initialValue);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setItemsList([...JSON.parse(localStorage.getItem(itemName))]);
+    setLoading(false);
+  }, [itemName]);
 
   const saveLocalStorage = (actualizedList) => {
     setItemsList(actualizedList);
@@ -10,7 +14,7 @@ function useLocalStorage(itemName, initialValue) {
     localStorage.setItem(itemName, tasksListString);
   };
 
-  return [itemsList, saveLocalStorage];
+  return { itemsList, saveLocalStorage, loading };
 }
 
 export { useLocalStorage };
