@@ -33,6 +33,7 @@ function AppUI({
       <TaskSearch searchValue={searchValue} setSearchValue={setSearchValue} />
       <TasksContainer isAllEmpty={isAllEmpty}>
         {error ? <p>Hubo un error</p> : null}
+        {console.log(error)}
         {loading ? <LoadingState /> : null}
         {!loading && !searchedTasks.length ? (
           <h1 className="TaskContainer-Empty-Title">

@@ -4,7 +4,7 @@
   height: var(--dim);
   position: relative;
   animation: spin988 2s linear infinite;
-  margin: 150px auto;
+  margin: 100px auto;
 }
 
 .loader .circle {

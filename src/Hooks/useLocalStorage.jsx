@@ -9,6 +9,7 @@ function useLocalStorage(itemName, initialValue) {
       try {
         setItemsList([...JSON.parse(localStorage.getItem(itemName))]);
         setLoading(false);
+        setError(false);
       } catch (error) {
         console.log(error);
         setLoading(false);
