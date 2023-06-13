@@ -6,54 +6,67 @@ import ButtonAddTask from "../ButtonAddTask/ButtonAddTask";
 import TaskItem from "../TaskItem/TaskItem";
 import TaskForm from "../TaskForm/TaskForm";
 import LoadingState from "../LoadingState/LoadingState";
+import { TaskContext } from "../TasksContext/TaskContext";
 
-function AppUI({
-  loading,
-  error,
-  tasksList,
-  setTasksList,
-  isAllEmpty,
-  isAllCompleted,
-  completedTasks,
-  searchValue,
-  setSearchValue,
-  searchedTasks,
-  toggleDone,
-  removeTask,
-}) {
+function AppUI() {
+  // loading,
+  // error,
+  // tasksList,
+  // setTasksList,
+  // isAllEmpty,
+  // isAllCompleted,
+  // completedTasks,
+  // searchValue,
+  // setSearchValue,
+  // searchedTasks,
+  // toggleDone,
+  // removeTask,
   return (
     <>
-      <TaskForm tasksList={tasksList} setTasksList={setTasksList} />
+      {/* <TaskForm tasksList={tasksList} setTasksList={setTasksList} />
       <TaskCounter
         isAllEmpty={isAllEmpty}
         isAllCompleted={isAllCompleted}
         completed={completedTasks}
         total={tasksList.length}
       />
-      <TaskSearch searchValue={searchValue} setSearchValue={setSearchValue} />
-      <TasksContainer isAllEmpty={isAllEmpty}>
-        {error ? <p>Hubo un error</p> : null}
-        {console.log(error)}
-        {loading ? <LoadingState /> : null}
-        {!loading && !searchedTasks.length ? (
-          <h1 className="TaskContainer-Empty-Title">
-            Press + to add a new task..
-          </h1>
-        ) : null}
-        {searchedTasks.map((task) => (
-          <TaskItem
-            key={task.title}
-            title={task.title}
-            done={task.done}
-            onComplete={() => {
-              toggleDone(task.title);
-            }}
-            onRemove={() => {
-              removeTask(task.title);
-            }}
-          />
-        ))}
-      </TasksContainer>
+      <TaskSearch searchValue={searchValue} setSearchValue={setSearchValue} /> */}
+      <TaskContext.Consumer>
+        {({
+          loading,
+          error,
+
+          isAllEmpty,
+
+          searchedTasks,
+          toggleDone,
+          removeTask,
+        }) => (
+          <TasksContainer isAllEmpty={isAllEmpty}>
+            {error ? <p>Hubo un error</p> : null}
+            {loading ? <LoadingState /> : null}
+            {!loading && !searchedTasks.length ? (
+              <h1 className="TaskContainer-Empty-Title">
+                Press + to add a new task..
+              </h1>
+            ) : null}
+            {searchedTasks.map((task) => (
+              <TaskItem
+                key={task.title}
+                title={task.title}
+                done={task.done}
+                onComplete={() => {
+                  toggleDone(task.title);
+                }}
+                onRemove={() => {
+                  removeTask(task.title);
+                }}
+              />
+            ))}
+          </TasksContainer>
+        )}
+      </TaskContext.Consumer>
+
       <ButtonAddTask />
     </>
   );
