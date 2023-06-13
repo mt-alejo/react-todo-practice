@@ -1,0 +1,50 @@
+import TaskCounter from "../TaskCounter/TaskCounter";
+import TaskSearch from "../TaskSearch/TaskSearch";
+import TasksContainer from "../TasksContainer/TaskContainer";
+import ButtonAddTask from "../ButtonAddTask/ButtonAddTask";
+import TaskItem from "../TaskItem/TaskItem";
+import TaskForm from "../TaskForm/TaskForm";
+
+function AppUI({
+  tasksList,
+  setTasksList,
+  isAllEmpty,
+  isAllCompleted,
+  completedTasks,
+  searchValue,
+  setSearchValue,
+  searchedTasks,
+  toggleDone,
+  removeTask,
+}) {
+  return (
+    <>
+      <TaskForm tasksList={tasksList} setTasksList={setTasksList} />
+      <TaskCounter
+        isAllEmpty={isAllEmpty}
+        isAllCompleted={isAllCompleted}
+        completed={completedTasks}
+        total={tasksList.length}
+      />
+      <TaskSearch searchValue={searchValue} setSearchValue={setSearchValue} />
+      <TasksContainer isAllEmpty={isAllEmpty}>
+        {searchedTasks.map((task) => (
+          <TaskItem
+            key={task.title}
+            title={task.title}
+            done={task.done}
+            onComplete={() => {
+              toggleDone(task.title);
+            }}
+            onRemove={() => {
+              removeTask(task.title);
+            }}
+          />
+        ))}
+      </TasksContainer>
+      <ButtonAddTask />
+    </>
+  );
+}
+
+export default AppUI;
