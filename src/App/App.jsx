@@ -1,12 +1,7 @@
 import "./App.css";
 import { useState } from "react";
-import TaskCounter from "../TaskCounter/TaskCounter";
-import TaskSearch from "../TaskSearch/TaskSearch";
-import TasksContainer from "../TasksContainer/TaskContainer";
-import ButtonAddTask from "../ButtonAddTask/ButtonAddTask";
-import TaskItem from "../TaskItem/TaskItem";
-import TaskForm from "../TaskForm/TaskForm";
 import { useLocalStorage } from "../Hooks/useLocalStorage";
+import AppUI from "./AppUI";
 
 function App() {
   const [tasksList, setTasksList] = useLocalStorage("TASKER_V1", []);
@@ -46,32 +41,18 @@ function App() {
   const isAllEmpty = tasksList.length === 0 ? true : false;
 
   return (
-    <>
-      <TaskForm tasksList={tasksList} setTasksList={setTasksList} />
-      <TaskCounter
-        isAllEmpty={isAllEmpty}
-        isAllCompleted={isAllCompleted}
-        completed={completedTasks}
-        total={tasksList.length}
-      />
-      <TaskSearch searchValue={searchValue} setSearchValue={setSearchValue} />
-      <TasksContainer isAllEmpty={isAllEmpty}>
-        {searchedTasks.map((task) => (
-          <TaskItem
-            key={task.title}
-            title={task.title}
-            done={task.done}
-            onComplete={() => {
-              toggleDone(task.title);
-            }}
-            onRemove={() => {
-              removeTask(task.title);
-            }}
-          />
-        ))}
-      </TasksContainer>
-      <ButtonAddTask />
-    </>
+    <AppUI
+      tasksList={tasksList}
+      setTasksList={setTasksList}
+      isAllEmpty={isAllEmpty}
+      isAllCompleted={isAllCompleted}
+      completedTasks={completedTasks}
+      searchValue={searchValue}
+      setSearchValue={setSearchValue}
+      searchedTasks={searchedTasks}
+      toggleDone={toggleDone}
+      removeTask={removeTask}
+    />
   );
 }
 
