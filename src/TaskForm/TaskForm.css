@@ -33,8 +33,16 @@
   max-width: 100px;
   height: 30px;
   margin: 20px auto;
-  color: rgb(44, 44, 44);
+  color: rgb(29, 29, 29);
   background: greenyellow;
+  border: none;
+  transition: 0.3s ease-in-out;
+  border-radius: 24px;
+}
+
+.TaskForm-submit:hover {
+  background-color: rgb(104, 211, 5);
+  color: rgb(36, 36, 36);
 }
 
 .TaskForm .ButtonClose {

@@ -1,6 +1,5 @@
 import "./TaskForm.css";
-import DeleteIcon from "./DeleteIcon";
-
+import CloseIcon from "./CloseIcon";
 function TaskForm({ setTasksList, tasksList }) {
   return (
     <form
@@ -21,18 +20,8 @@ function TaskForm({ setTasksList, tasksList }) {
       <label htmlFor="task-title">Task:</label>
       <input type="text" name="task-title" className="TaskForm-input" />
       <input type="submit" value="Add task" className="Btn TaskForm-submit" />
-      {/* <button
-        type="button"
-        className="ButtonClose"
-        onClick={() => {
-          document
-            .querySelector(".TaskForm")
-            .classList.remove("TaskForm--active");
-        }}
-      >
-        x
-      </button>{" "} */}
-      <DeleteIcon
+
+      <CloseIcon
         onClose={() => {
           document
             .querySelector(".TaskForm")

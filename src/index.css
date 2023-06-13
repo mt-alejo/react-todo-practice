@@ -16,19 +16,14 @@ html {
   margin: 0 24px;
 }
 
-.Btn {
-  padding: 4px;
-  border: 1px solid transparent;
-  border-radius: 3px;
-
-  background: rgb(216, 216, 216);
-  color: rgb(49, 49, 49);
+button {
+  /* Variables */
+  --button_radius: 0.75em;
+  --button_color: #e8e8e8;
+  --button_outline_color: #000000;
+  font-size: 17px;
   font-weight: bold;
-  transition: 0.3s;
-}
-
-.Btn:hover {
-  border: 1px solid rgb(125, 133, 136);
-  background: rgb(175, 175, 175);
-  color: rgb(39, 39, 39);
+  border: none;
+  border-radius: var(--button_radius);
+  background: var(--button_outline_color);
 }
