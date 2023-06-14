@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import "./TaskSearch.css";
+import { TaskContext } from "../TasksContext/TaskContext";
 
 // eslint-disable-next-line react/prop-types
-function TaskSearch({ searchValue, setSearchValue }) {
+function TaskSearch() {
+  const { searchValue, setSearchValue } = useContext(TaskContext);
   return (
     <>
       <input

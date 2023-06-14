@@ -13,7 +13,7 @@ function AppUI() {
     <>
       {/* <TaskForm tasksList={tasksList} setTasksList={setTasksList} /> */}
       <TaskCounter />
-      {/* <TaskSearch searchValue={searchValue} setSearchValue={setSearchValue} />  */}
+      <TaskSearch />
       <TaskContext.Consumer>
         {({
           loading,
