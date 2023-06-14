@@ -12,7 +12,7 @@ function TaskProvider({ children }) {
   } = useLocalStorage("TASKER_V1", []);
 
   const completedTasks = tasksList.filter((task) => task.done === true).length;
-
+  const totalTasks = tasksList.length;
   const [searchValue, setSearchValue] = useState("");
 
   const searchedTasks = tasksList.filter((task) => {
@@ -54,6 +54,7 @@ function TaskProvider({ children }) {
         isAllEmpty,
         isAllCompleted,
         completedTasks,
+        totalTasks,
         searchValue,
         setSearchValue,
         searchedTasks,

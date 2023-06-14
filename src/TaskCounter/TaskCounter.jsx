@@ -1,10 +1,15 @@
+import { useContext } from "react";
 import "./TaskCounter.css";
+import { TaskContext } from "../TasksContext/TaskContext";
 // eslint-disable-next-line react/prop-types
-function TaskCounter({ completed, total, isAllCompleted, isAllEmpty }) {
+function TaskCounter() {
+  const { isAllEmpty, isAllCompleted, completedTasks, totalTasks } =
+    useContext(TaskContext);
   let mesagge = (
     <h1 className="TaskCounter">
-      You have completed <span className="TaskCounter-span">{completed} </span>
-      of <span className="TaskCounter-span">{total} </span> tasks
+      You have completed{" "}
+      <span className="TaskCounter-span">{completedTasks} </span>
+      of <span className="TaskCounter-span">{totalTasks} </span> tasks
     </h1>
   );
   if (isAllCompleted) {

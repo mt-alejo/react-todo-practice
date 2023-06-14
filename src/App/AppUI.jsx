@@ -11,14 +11,9 @@ import { TaskContext } from "../TasksContext/TaskContext";
 function AppUI() {
   return (
     <>
-      {/* <TaskForm tasksList={tasksList} setTasksList={setTasksList} />
-      <TaskCounter
-        isAllEmpty={isAllEmpty}
-        isAllCompleted={isAllCompleted}
-        completed={completedTasks}
-        total={tasksList.length}
-      />
-      <TaskSearch searchValue={searchValue} setSearchValue={setSearchValue} /> */}
+      {/* <TaskForm tasksList={tasksList} setTasksList={setTasksList} /> */}
+      <TaskCounter />
+      {/* <TaskSearch searchValue={searchValue} setSearchValue={setSearchValue} />  */}
       <TaskContext.Consumer>
         {({
           loading,
