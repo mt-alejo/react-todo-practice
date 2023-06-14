@@ -9,18 +9,6 @@ import LoadingState from "../LoadingState/LoadingState";
 import { TaskContext } from "../TasksContext/TaskContext";
 
 function AppUI() {
-  // loading,
-  // error,
-  // tasksList,
-  // setTasksList,
-  // isAllEmpty,
-  // isAllCompleted,
-  // completedTasks,
-  // searchValue,
-  // setSearchValue,
-  // searchedTasks,
-  // toggleDone,
-  // removeTask,
   return (
     <>
       {/* <TaskForm tasksList={tasksList} setTasksList={setTasksList} />
@@ -35,9 +23,7 @@ function AppUI() {
         {({
           loading,
           error,
-
           isAllEmpty,
-
           searchedTasks,
           toggleDone,
           removeTask,
