@@ -50,7 +50,11 @@ function AppUI() {
           </TasksContainer>
         )}
       </TaskContext.Consumer>
-      {openModal && <TaskModal>TASK FORM</TaskModal>}
+      {openModal && (
+        <TaskModal>
+          <TaskForm />
+        </TaskModal>
+      )}
       <ButtonAddTask />
     </>
   );

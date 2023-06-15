@@ -1,3 +1,4 @@
+import "./TaskModal.css";
 import { createPortal } from "react-dom";
 
 function TaskModal({ children }) {

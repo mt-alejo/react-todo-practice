@@ -63,6 +63,7 @@ function TaskProvider({ children }) {
         toggleDone,
         removeTask,
         openModal,
+        setOpenModal,
       }}
     >
       {children}
