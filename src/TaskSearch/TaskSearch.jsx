@@ -4,7 +4,8 @@ import { TaskContext } from "../TasksContext/TaskContext";
 
 // eslint-disable-next-line react/prop-types
 function TaskSearch() {
-  const { searchValue, setSearchValue } = useContext(TaskContext);
+  const { searchValue, setSearchValue, searchedTasks } =
+    useContext(TaskContext);
   return (
     <>
       <input
@@ -14,6 +15,7 @@ function TaskSearch() {
         value={searchValue}
         onChange={(e) => {
           setSearchValue(e.target.value);
+          console.log(searchedTasks.length);
         }}
       />
     </>
