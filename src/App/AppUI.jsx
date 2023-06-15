@@ -6,9 +6,12 @@ import ButtonAddTask from "../ButtonAddTask/ButtonAddTask";
 import TaskItem from "../TaskItem/TaskItem";
 import TaskForm from "../TaskForm/TaskForm";
 import LoadingState from "../LoadingState/LoadingState";
+import TaskModal from "../TaskModal/TaskModal";
+import { useContext } from "react";
 import { TaskContext } from "../TasksContext/TaskContext";
 
 function AppUI() {
+  const { openModal } = useContext(TaskContext);
   return (
     <>
       {/* <TaskForm tasksList={tasksList} setTasksList={setTasksList} /> */}
@@ -47,7 +50,7 @@ function AppUI() {
           </TasksContainer>
         )}
       </TaskContext.Consumer>
-
+      {openModal && <TaskModal>TASK FORM</TaskModal>}
       <ButtonAddTask />
     </>
   );

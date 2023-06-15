@@ -15,6 +15,8 @@ function TaskProvider({ children }) {
   const totalTasks = tasksList.length;
   const [searchValue, setSearchValue] = useState("");
 
+  const [openModal, setOpenModal] = useState(false);
+
   const searchedTasks = tasksList.filter((task) => {
     let taskTitle = task.title.toLowerCase();
     let searchedValue = searchValue.toLowerCase();
@@ -60,6 +62,7 @@ function TaskProvider({ children }) {
         searchedTasks,
         toggleDone,
         removeTask,
+        openModal,
       }}
     >
       {children}
