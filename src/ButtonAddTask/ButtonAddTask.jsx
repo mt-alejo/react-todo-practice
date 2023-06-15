@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import "./ButtonAddTask.css";
 import { TaskContext } from "../TasksContext/TaskContext";
+import { FaPlus } from "react-icons/fa";
+
 function ButtonAddTask() {
   const { setOpenModal } = useContext(TaskContext);
   return (
@@ -13,7 +15,7 @@ function ButtonAddTask() {
           setOpenModal((value) => !value);
         }}
       >
-        +
+        <FaPlus />
       </span>
     </button>
   );

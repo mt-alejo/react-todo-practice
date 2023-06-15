@@ -26,4 +26,5 @@ button {
   border: none;
   border-radius: var(--button_radius);
   background: var(--button_outline_color);
+  transition: 0.2s;
 }

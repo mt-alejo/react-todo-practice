@@ -1,6 +1,8 @@
+import { useContext } from "react";
 import "./TaskForm.css";
-import CloseIcon from "./CloseIcon";
+import { TaskContext } from "../TasksContext/TaskContext";
 function TaskForm() {
+  const { setOpenModal } = useContext(TaskContext);
   return (
     // <form
     //   action=""
@@ -29,7 +31,28 @@ function TaskForm() {
     //     }}
     //   />
     // </form>
-    <form>Here the form</form>
+    <form
+      className="TaskForm"
+      onSubmit={(e) => {
+        e.preventDefault();
+        console.log("Woorks");
+      }}
+    >
+      <label htmlFor="">Insert task:</label>
+      <textarea name="" id="" placeholder="Write a task"></textarea>
+      <div className="TaskForm-button-container">
+        <button
+          className="TaskForm-button TaskForm-button--cancel"
+          type="button"
+          onClick={() => setOpenModal((value) => !value)}
+        >
+          Cancel
+        </button>
+        <button className="TaskForm-button TaskForm-button--add" type="submit">
+          Add task
+        </button>
+      </div>
+    </form>
   );
 }
 
