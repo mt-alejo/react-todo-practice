@@ -13,7 +13,7 @@ function TaskProvider({ children }) {
 
   const completedTasks = tasksList.filter((task) => task.done === true).length;
   const totalTasks = tasksList.length;
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState();
 
   const [openModal, setOpenModal] = useState(false);
 
@@ -46,6 +46,19 @@ function TaskProvider({ children }) {
     );
     setTasksList(actualizedTaskList);
   };
+
+  const addTask = (userImput) => {
+    const newTask = createTask(userImput, false);
+    setTasksList([...tasksList, newTask]);
+  };
+
+  const createTask = (title, done) => {
+    return {
+      title,
+      done,
+    };
+  };
+
   return (
     <TaskContext.Provider
       value={{
@@ -64,6 +77,7 @@ function TaskProvider({ children }) {
         removeTask,
         openModal,
         setOpenModal,
+        addTask,
       }}
     >
       {children}
