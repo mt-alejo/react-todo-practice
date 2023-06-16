@@ -13,7 +13,7 @@ function TaskProvider({ children }) {
 
   const completedTasks = tasksList.filter((task) => task.done === true).length;
   const totalTasks = tasksList.length;
-  const [searchValue, setSearchValue] = useState();
+  const [searchValue, setSearchValue] = useState("");
 
   const [openModal, setOpenModal] = useState(false);
 

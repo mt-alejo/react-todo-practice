@@ -15,7 +15,6 @@ function TaskSearch() {
         value={searchValue}
         onChange={(e) => {
           setSearchValue(e.target.value);
-          console.log(searchedTasks.length);
         }}
       />
     </>
